@@ -11,10 +11,7 @@ const makeQuery = (
   }
 ) => {};
 
-type MakeQueryParameters = [
-  url: string,
-  opts?: { method?: string; headers?: Record<string, string>; body?: string }
-];
+type MakeQueryParameters = Parameters<typeof makeQuery>;
 
 type tests = [
   Expect<
