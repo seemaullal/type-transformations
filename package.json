@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "Seema Ullal <seemaullal@gmail.com>",
-  "license": "GPL",
+  "license": "UNLICENSED",
   "devDependencies": {
     "@types/node": "^18.6.5",
     "chokidar": "^3.5.3",
