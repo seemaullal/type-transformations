@@ -6,11 +6,9 @@ interface Attributes {
   username: string;
 }
 
-/**
- * How do we create a type helper that represents a union
- * of all possible combinations of Attributes?
- */
-type MutuallyExclusive<T> = unknown;
+type MutuallyExclusive<T> = {
+  [K in keyof T]: { [key in K]: T[key] };
+}[keyof T];
 
 type ExclusiveAttributes = MutuallyExclusive<Attributes>;
 
@@ -28,5 +26,5 @@ type tests = [
           username: string;
         }
     >
-  >,
+  >
 ];
