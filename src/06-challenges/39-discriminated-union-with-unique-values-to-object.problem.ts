@@ -13,7 +13,9 @@ type Route =
   | { route: "/admin/users" };
 
 type RoutesObject = {
-  [T in Route as T["route"]]: T extends { search: any } ? T["search"] : never;
+  [T in Route as T["route"]]: T extends { search: infer SearchValue }
+    ? SearchValue
+    : never;
 };
 
 type tests = [
