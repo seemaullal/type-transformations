@@ -8,7 +8,11 @@ interface Example {
   groupId: string;
 }
 
-type OnlyIdKeys<T> = unknown;
+type StringId = `${string}${"id" | "Id"}`;
+
+type OnlyIdKeys<T> = {
+  [key in keyof T as key extends StringId ? key : never]: T[key];
+};
 
 type tests = [
   Expect<
