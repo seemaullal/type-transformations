@@ -7,7 +7,7 @@ interface Attributes {
 }
 
 type MutuallyExclusive<T> = {
-  [K in keyof T]: { [key in K]: T[key] };
+  [K in keyof T]: Record<K, T[K]>;
 }[keyof T];
 
 type ExclusiveAttributes = MutuallyExclusive<Attributes>;
